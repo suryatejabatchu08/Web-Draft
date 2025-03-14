@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocHub</title>
+    <link rel="stylesheet" href="appointment.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="logo"><a href="home.html"><img src="Logo.png" alt="DocHub" width="92.2" height="45"></a></div>
+        <div class="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="appointment.html">Book Appointment</a></li>
+          <li><a href="upload.html">Report Analysis</a></li>
+          <li><a href="#">Medicines</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#" class="login-register">Login / Register</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Book Your Doctor Appointment</h1>
+        <p>Find and book appointments with top doctors in your area</p>
+      </section>
+
+      <section class="search-section">
+        <div class="search-container">
+          <select id="specialtySelect" class="specialty-select">
+            <option value="">Select Specialty</option>
+          </select>
+          <input type="text" id="locationInput" placeholder="Enter Location" class="location-input">
+          <button id="searchButton" class="search-button">Search</button>
+        </div>
+      </section>
+
+      <section class="doctors-list" id="doctorsList">
+        <!-- Doctors will be populated here -->
+      </section>
+
+      <section class="video-consultation">
+        <div class="consultation-container">
+          <div class="consultation-content">
+            <h2>Need an Instant Video Consultation?</h2>
+            <p>Connect with experienced doctors from the comfort of your home</p>
+            <div class="consultation-features">
+              <div class="feature">
+                <span class="feature-icon">🕒</span>
+                <h3>24/7 Availability</h3>
+                <p>Connect with doctors anytime, anywhere</p>
+              </div>
+              <div class="feature">
+                <span class="feature-icon">💊</span>
+                <h3>Digital Prescription</h3>
+                <p>Get prescriptions directly to your email</p>
+              </div>
+              <div class="feature">
+                <span class="feature-icon">💰</span>
+                <h3>Affordable Rates</h3>
+                <p>Pay only for the time you consult</p>
+              </div>
+            </div>
+            <button id="startConsultation" class="consultation-button">Start Video Consultation</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="bookingModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Book Appointment</h2>
+        <form id="bookingForm">
+          <input type="text" id="patientName" placeholder="Your Name" required>
+          <input type="email" id="patientEmail" placeholder="Your Email" required>
+          <input type="tel" id="patientPhone" placeholder="Your Phone" required>
+          <input type="date" id="appointmentDate" required>
+          <select id="appointmentTime" required>
+            <option value="">Select Time</option>
+          </select>
+          <button type="submit" class="book-button">Confirm Booking</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="consultationModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Start Video Consultation</h2>
+        <form id="consultationForm">
+          <input type="text" id="consultName" placeholder="Your Name" required>
+          <input type="email" id="consultEmail" placeholder="Your Email" required>
+          <input type="tel" id="consultPhone" placeholder="Your Phone" required>
+          <select id="consultSpecialty" required>
+            <option value="">Select Specialty</option>
+          </select>
+          <textarea id="consultSymptoms" placeholder="Describe your symptoms briefly" required></textarea>
+          <button type="submit" class="consultation-button">Start Consultation</button>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="appointment.js"></script>
+  </body>
+</html>
