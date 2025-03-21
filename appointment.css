@@ -1,115 +1,74 @@
 :root {
-  --primary-color: #2c8b80;
-  --secondary-color: #f0f7f6;
-  --text-color: #2d3436;
-  --light-gray: #f8fafa;
-  --border-color: #e5e9e9;
-  --accent-color: #43a899;
-  --success-color: #2ecc71;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --primary-blue: #2C7BBF;
+  --primary-green: #4CAF50;
+  --primary-white: #FFFFFF;
+  --secondary-gray: #F5F7FA;
+  --dark-blue: #1B4F72;
+  --error-red: #DC3545;
+  --warning-orange: #FF9800;
+  --text-gray: #333333;
+  --light-gray: #E8EDF2;
+  --light-blue: #f0f8ff;
 }
 
 body {
-  background-color: var(--light-gray);
-  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--secondary-gray);
+  color: var(--text-gray);
   line-height: 1.6;
 }
 
 /* Header & Navigation */
-.header {
-  background: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.navbar {
+  background: var(--primary-white) !important;
+  padding: 0.8rem 1.5rem !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
-  transition: all 0.3s ease;
 }
 
-.header:hover {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.navbar-nav {
+  align-items: center !important;
 }
 
-nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.05);
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  align-items: center;
-}
-
-.nav-links li {
-  position: relative;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--text-color);
+.nav-link {
+  color: var(--text-gray) !important;
+  font-size: 16px;
   font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem !important;
 }
 
-.nav-links a:hover {
-  color: var(--primary-color);
-  background-color: var(--secondary-color);
+.logo img {
+max-height: 50px;
+width: auto;
+transition: all 0.3s ease;
 }
 
-.nav-links a.active {
-  color: var(--primary-color);
-  background-color: var(--secondary-color);
+nav ul {
+list-style: none;
+padding: 0;
+display: flex;
 }
 
-.login-register {
-  background-color: var(--primary-color) !important;
-  color: white !important;
-  padding: 0.5rem 1.5rem !important;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+nav ul li {
+margin: 0 15px;
 }
 
-.login-register:hover {
-  background-color: var(--accent-color) !important;
-  transform: translateY(-2px);
+nav ul li a {
+color: var(--text-gray);
+text-decoration: none;
+font-size: 18px;
+font-weight: 600;
+transition: color 0.3s ease;
 }
 
-.hamburger {
-  display: none;
-  cursor: pointer;
-}
-
-.hamburger div {
-  width: 25px;
-  height: 3px;
-  background-color: var(--text-color);
-  margin: 5px;
-  transition: all 0.3s ease;
+nav ul li a:hover {
+color: var(--primary-blue);
 }
 
 /* Hero Section */
@@ -117,18 +76,18 @@ nav {
   margin-top: 4rem;
   text-align: center;
   padding: 4rem 2rem;
-  background: var(--secondary-color);
+  background: var(--secondary-gray);
 }
 
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--text-color);
+  color: var(--text-gray);
 }
 
 .hero p {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--accent-color);
 }
 
 /* Search Section */
@@ -151,31 +110,26 @@ nav {
 .location-input {
   flex: 1;
   padding: 0.8rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--light-blue);
   border-radius: 4px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition: light-blue 0.3s ease;
 }
 
 .specialty-select:focus,
 .location-input:focus {
-  border-color: var(--accent-color);
+  border-color: var(--primary-blue);
   outline: none;
 }
 
 .search-button {
   padding: 0.8rem 2rem;
-  background: var(--primary-color);
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-weight: 500;
   transition: background-color 0.3s ease;
-}
-
-.search-button:hover {
-  background: var(--accent-color);
 }
 
 /* Doctors List */
@@ -207,23 +161,22 @@ nav {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
-  border: 3px solid var(--secondary-color);
+  border: 3px solid var(--secondary-gray);
 }
 
 .doctor-info h3 {
   margin-bottom: 0.5rem;
-  color: var(--primary-color);
+  color: var(--primary-blue);
 }
 
 .doctor-info p {
-  color: #666;
+  color: var(--accent-color);
   margin-bottom: 0.5rem;
 }
 
 .book-button {
   width: 100%;
   padding: 0.8rem;
-  background: var(--primary-color);
   color: white;
   border: none;
   border-radius: 4px;
@@ -234,12 +187,12 @@ nav {
 }
 
 .book-button:hover {
-  background: var(--accent-color);
+  background: var(--dark-blue);
 }
 
 /* Video Consultation Section */
 .video-consultation {
-  background: var(--secondary-color);
+  background: var(--secondary-gray);
   padding: 4rem 2rem;
   margin-top: 2rem;
 }
@@ -255,13 +208,13 @@ nav {
 
 .consultation-content h2 {
   font-size: 2.5rem;
-  color: var(--text-color);
+  color: var(--text-gray);
   margin-bottom: 1rem;
 }
 
 .consultation-content > p {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--accent-color);
   margin-bottom: 3rem;
 }
 
@@ -288,19 +241,19 @@ nav {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   display: inline-block;
+  color: var(--primary-blue);
 }
 
 .feature h3 {
-  color: var(--primary-color);
+  color: var(--primary-blue);
   margin-bottom: 0.5rem;
 }
 
 .feature p {
-  color: #666;
+  color: var(--accent-color);
 }
 
 .consultation-button {
-  background: var(--primary-color);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -311,7 +264,7 @@ nav {
 }
 
 .consultation-button:hover {
-  background: var(--accent-color);
+  background: var(--dark-blue);
   transform: translateY(-2px);
 }
 
@@ -342,12 +295,12 @@ nav {
   top: 1rem;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #666;
+  color: var(--accent-color);
   transition: color 0.3s ease;
 }
 
 .close:hover {
-  color: var(--text-color);
+  color: var(--error-red);
 }
 
 #bookingForm,
@@ -364,9 +317,9 @@ nav {
 #consultationForm select,
 #consultationForm textarea {
   padding: 0.8rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--light-blue);
   border-radius: 4px;
-  transition: border-color 0.3s ease;
+  transition: light-blue 0.3s ease;
 }
 
 #bookingForm input:focus,
@@ -374,7 +327,7 @@ nav {
 #consultationForm input:focus,
 #consultationForm select:focus,
 #consultationForm textarea:focus {
-  border-color: var(--accent-color);
+  border-color: var(--primary-blue);
   outline: none;
 }
 
@@ -383,11 +336,55 @@ nav {
   resize: vertical;
 }
 
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
+/* For Checking */
+.btn-primary:hover {
+  background-color: var(--text-gray);
+}
 
+/* Footer Styles */
+footer {
+  background: var(--dark-blue) !important;
+}
+
+footer h5 {
+  color: var(--primary-white);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+footer ul li a {
+  transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+  color: var(--primary-blue) !important;
+}
+
+footer .social-links a {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+  color: var(--primary-blue) !important;
+}
+
+footer .input-group .form-control {
+  border: none;
+  padding: 0.5rem;
+}
+
+footer .input-group .btn {
+  background-color: var(--primary-blue);
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+footer .input-group .btn:hover {
+  background-color: var(--dark-blue);
+}
+
+@media (max-width: 768px) {
   .nav-links {
     display: none;
     position: absolute;
@@ -408,12 +405,6 @@ nav {
     width: 100%;
     text-align: center;
     padding: 0.5rem 0;
-  }
-
-  .login-register {
-    margin: 0.5rem 2rem;
-    display: block;
-    text-align: center;
   }
 
   .search-container {

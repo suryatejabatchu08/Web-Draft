@@ -107,7 +107,7 @@ function displayDoctors(filteredDoctors = doctors) {
         <p>${doctor.specialty}</p>
         <p>${doctor.experience} experience</p>
         <p>⭐ ${doctor.rating} / 5</p>
-        <button class="book-button" onclick="openModal(${doctor.id})">Book Appointment</button>
+        <button class="book-button btn btn-primary" onclick="openModal(${doctor.id})">Book Appointment</button>
       </div>
     `;
     doctorsList.appendChild(doctorCard);
